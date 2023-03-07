@@ -21,3 +21,19 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
 });
+
+Route::prefix('holders')->group(function() {
+
+    Route::get('', 'App\Http\Controllers\HolderController@index')->name('holder.index');
+    Route::get('search', 'App\Http\Controllers\HolderController@search')->name('holder.search');
+    Route::get('getBranches/{company}', 'App\Http\Controllers\HolderController@getBranches')->name('holder.getBranches');
+    Route::get('getDepartments/{company}', 'App\Http\Controllers\HolderController@getDepartments')->name('holder.getDepartments');
+    //Route::get('create', 'App\Http\Controllers\HolderController@create')->name('holder.create');
+    Route::post('storeAjax', 'App\Http\Controllers\HolderController@storeAjax')->name('holder.storeAjax');
+    Route::post('storeHolder', 'App\Http\Controllers\HolderController@storeHolder')->name('holder.storeHolder');
+    Route::get('editAjax/{holder}', 'App\Http\Controllers\HolderController@editAjax')->name('holder.editAjax');
+    Route::get('showAjax/{holder}', 'App\Http\Controllers\HolderController@showAjax')->name('holder.showAjax');
+    Route::post('updateAjax/{holder}', 'App\Http\Controllers\HolderController@updateAjax')->name('holder.updateAjax');
+    Route::post('deleteAjax/{holder}', 'App\Http\Controllers\HolderController@deleteAjax')->name('holder.deleteAjax');
+
+});

@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-use DB;
-    
+use Illuminate\Support\Facades\DB;
+
 class RoleController extends Controller
 {
     /**
@@ -22,9 +22,10 @@ class RoleController extends Controller
          $this->middleware('permission:role-create', ['only' => ['create','store']]);
          $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:role-delete', ['only' => ['destroy']]);
+
     }
     
-    /**
+      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
