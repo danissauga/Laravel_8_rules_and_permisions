@@ -16,10 +16,10 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('purpose')->nullable();
-            $table->unsignedBigInteger('company_id')->nullable();
-            $table->foreign('company_id')->references('id')->on('companies');
-            $table->unsignedBigInteger('auditor_id')->nullable();
-            $table->foreign('auditor_id')->references('id')->on('auditors');
+            // $table->unsignedBigInteger('company_id')->nullable();
+            // $table->foreign('company_id')->references('id')->on('companies');
+            // $table->unsignedBigInteger('auditor_id')->nullable();
+            // $table->foreign('auditor_id')->references('id')->on('auditors');
             $table->date('validity_date_from')->nullable();
             $table->date('validity_date_to')->nullable();
             $table->time('trigger')->nullable();
