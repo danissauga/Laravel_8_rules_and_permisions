@@ -18,6 +18,7 @@
         padding: 8px;
         text-align: center;
         vertical-align: middle;
+        border-bottom: 1px solid #DDDDDD;
     }
 
     .custom-table th {
