@@ -7,12 +7,19 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ContactController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
   
 Auth::routes();
+
+
+Route::get('contact-us', [ContactController::class, 'index']);
+Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+
   
 Route::get('/home', [HomeController::class, 'index'])->name('home');
   
